@@ -4,30 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hannzstore - Premium Apps</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Canvas luar angkasa penuh layar */
+        /* Canvas Background */
         #space-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
         }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-slate-950 text-gray-200 font-sans min-h-screen relative overflow-x-hidden">
 
-    <!-- Animasi Luar Angkasa -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1.5 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-500 z-[100] w-0 shadow-[0_0_10px_rgba(168,85,247,0.7)] rounded-r-full transition-all duration-150 ease-out"></div>
+
     <canvas id="space-canvas"></canvas>
 
-    <!-- Content Wrapper (di atas canvas) -->
-    <div class="relative z-10">
-
-        <!-- Header -->
+    <div class="relative z-10 flex flex-col min-h-screen">
         <header class="bg-slate-900/80 backdrop-blur-md py-3 px-6 shadow-lg flex items-center justify-start gap-3 border-b border-slate-800 sticky top-0 z-50">
             <img src="logo1.png" alt="Logo Hannzstore" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow-sm object-cover">
             <div>
@@ -36,151 +28,143 @@
             </div>
         </header>
 
-        <!-- Konten Utama -->
-        <main class="max-w-4xl mx-auto p-6 space-y-10">
+        <main class="max-w-4xl mx-auto p-4 sm:p-6 space-y-10 flex-grow w-full">
 
-            <!-- Profil Store & Statistik Box (YANG BARU DIUPDATE) -->
-            <section class="bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 text-center border-t-4 border-purple-500 border-x border-b border-slate-800">
-                <p class="text-lg md:text-xl text-gray-200 font-medium mb-8 leading-relaxed">
+            <section class="bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-2xl p-6 md:p-8 text-center border-t-4 border-purple-500 border-x border-b border-slate-800">
+                <p class="text-base md:text-xl text-gray-200 font-medium mb-6 leading-relaxed">
                     "Salah satu store dengan produk aplikasi premium yang terjamin keamanannya."
                 </p>
 
-                <div class="flex flex-col md:flex-row justify-center items-center gap-3 text-sm font-semibold text-gray-300">
-                    <div class="bg-slate-800/80 px-5 py-2.5 rounded-full border border-slate-700 shadow-inner w-full md:w-auto">
-                        ? Maker App Premium
+                <div class="grid grid-cols-3 gap-2 w-full text-[10px] md:text-sm font-semibold text-gray-300">
+                    <div class="bg-slate-800/80 px-1 py-2 md:py-3 rounded-xl border border-slate-700 hover:scale-105 transition-all cursor-default flex flex-col items-center justify-center">
+                        <span class="text-lg md:text-xl mb-1">✨</span>
+                        <span class="leading-tight">Maker App</span>
                     </div>
-                    <!-- Angka user akan tetap mengambil dari server.js karena id="angka-user" masih dipertahankan -->
-                    <div class="bg-slate-800/80 px-5 py-2.5 rounded-full border border-slate-700 shadow-inner w-full md:w-auto flex items-center justify-center gap-2">
-                        ?? Total User Kami: <span class="text-purple-400 text-base font-bold" id="angka-user">Memuat...</span>
+                    
+                    <div class="bg-slate-800/80 px-1 py-2 md:py-3 rounded-xl border border-slate-700 hover:scale-105 transition-all cursor-default flex flex-col items-center justify-center">
+                        <span class="text-lg md:text-xl mb-1">👥</span>
+                        <span class="leading-tight">User: <span class="text-purple-400 font-bold" id="angka-user">...</span></span>
                     </div>
-                    <div class="bg-slate-800/80 px-5 py-2.5 rounded-full border border-slate-700 shadow-inner w-full md:w-auto">
-                        ?? Bot Auto Order 24/7
+                    
+                    <div class="bg-slate-800/80 px-1 py-2 md:py-3 rounded-xl border border-slate-700 hover:scale-105 transition-all cursor-default flex flex-col items-center justify-center">
+                        <span class="text-lg md:text-xl mb-1">🤖</span>
+                        <span class="leading-tight">Bot 24/7</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Produk Unggulan -->
             <section class="pt-2">
-                <h2 class="text-3xl font-bold mb-6 text-center text-white drop-shadow-md">Produk Unggulan</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-white drop-shadow-md">Produk Unggulan</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     
-                    <!-- Capcut Pro -->
                     <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-slate-800 text-center hover:border-blue-500 transition-all hover:scale-105">
                         <img src="logo2.jpeg" alt="Capcut Pro" class="w-20 h-20 mx-auto mb-4 rounded-2xl shadow-md object-cover">
                         <h3 class="text-xl font-bold mb-2 text-blue-400">Capcut Pro</h3>
-                        <p class="text-gray-400 text-sm">Edit video tanpa batas dengan semua fitur premium terbuka.</p>
+                        <p class="text-gray-400 text-sm mb-4">Edit video tanpa batas dengan semua fitur premium terbuka.</p>
+                        
+                        <div class="border-t border-slate-700 pt-3 mt-2 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-gray-200 font-bold">Mulai Rp 1.500</span>
+                            <span class="text-emerald-400 font-semibold">🔥 Terjual: 150+</span>
+                        </div>
                     </div>
 
-                    <!-- Alight Motion -->
                     <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-slate-800 text-center hover:border-purple-500 transition-all hover:scale-105">
                         <img src="logo3.jpeg" alt="Alight Motion" class="w-20 h-20 mx-auto mb-4 rounded-2xl shadow-md object-cover">
                         <h3 class="text-xl font-bold mb-2 text-purple-400">Alight Motion</h3>
-                        <p class="text-gray-400 text-sm">Bikin animasi dan motion graphics pro langsung dari HP-mu.</p>
+                        <p class="text-gray-400 text-sm mb-4">Bikin animasi dan motion graphics pro langsung dari HP-mu.</p>
+                        
+                        <div class="border-t border-slate-700 pt-3 mt-2 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-gray-200 font-bold">Mulai Rp 1.500</span>
+                            <span class="text-emerald-400 font-semibold">🔥 Terjual: 150+</span>
+                        </div>
                     </div>
 
-                    <!-- Wink Premium -->
                     <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-lg border border-slate-800 text-center hover:border-blue-500 transition-all hover:scale-105">
                         <img src="logo4.jpeg" alt="Wink Premium" class="w-20 h-20 mx-auto mb-4 rounded-2xl shadow-md object-cover">
                         <h3 class="text-xl font-bold mb-2 text-blue-400">Wink Premium</h3>
-                        <p class="text-gray-400 text-sm">Enhance video dan foto dengan AI kualitas HD super jernih.</p>
+                        <p class="text-gray-400 text-sm mb-4">Enhance video dan foto dengan AI kualitas HD super jernih.</p>
+                        
+                        <div class="border-t border-slate-700 pt-3 mt-2 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-gray-200 font-bold">Mulai Rp 1.500</span>
+                            <span class="text-emerald-400 font-semibold">🔥 Terjual: 150+</span>
+                        </div>
                     </div>
 
                 </div>
             </section>
 
-            <!-- Testimoni -->
             <section class="pt-2">
-                <h2 class="text-3xl font-bold mb-6 text-center text-white drop-shadow-md">Apa Kata Mereka?</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-white drop-shadow-md">Apa Kata Mereka?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border-l-4 border-blue-500 border-y border-r border-slate-800">
-                        <p class="italic text-gray-300 mb-4">"produk disini harganya cocok di kantong, apalagi di kalangan pelajar kayak aku.adminnyajuga ramah,ada kendala apapun pasti direspon.the best memang"</p>
+                        <p class="italic text-gray-300 mb-4 text-sm">"produk disini harganya cocok di kantong, apalagi di kalangan pelajar kayak aku.adminnyajuga ramah,ada kendala apapun pasti direspon.the best memang"</p>
                         <h4 class="font-bold text-blue-400">- Y***a</h4>
                     </div>
                     <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border-l-4 border-purple-500 border-y border-r border-slate-800">
-                        <p class="italic text-gray-300 mb-4">"produk disini lumayan banyak, ada kendala bisa konsultasi anti ribet!. Next bakal langganan di sini terus."</p>
+                        <p class="italic text-gray-300 mb-4 text-sm">"produk disini lumayan banyak, ada kendala bisa konsultasi anti ribet!. Next bakal langganan di sini terus."</p>
                         <h4 class="font-bold text-purple-400">- A**o</h4>
                     </div>
                 </div>
             </section>
 
-            <!-- Section Kontak Kami -->
-            <section class="pt-6 pb-12 text-center">
-                <h2 class="text-3xl font-bold mb-2 text-white drop-shadow-md">Kontak Kami</h2>
-                <p class="text-gray-400 text-sm mb-6">Pilih salah satu layanan di bawah ini untuk memulai pemesanan</p>
+            <section class="pt-6 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2 text-white drop-shadow-md">Kontak Kami</h2>
+                <p class="text-gray-400 text-sm mb-6">Pilih salah satu layanan di bawah ini</p>
                 
-                <div class="flex flex-col justify-center items-center gap-4 max-w-sm mx-auto">
-                    <!-- WhatsApp -->
-                    <a href="https://wa.me/6281234567890" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                        ?? Hubungi WhatsApp
+                <div class="grid grid-cols-3 gap-2 w-full max-w-lg mx-auto">
+                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-1 rounded-xl shadow-[0_0_15px_rgba(5,150,105,0.4)] transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center text-[11px] md:text-sm">
+                        <span class="text-lg md:text-xl mb-1">📱</span>
+                        <span>WhatsApp</span>
                     </a>
-                    <!-- Join Telegram -->
-                    <a href="https://t.me/USERNAME_TELEGRAM" target="_blank" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                        ?? Join Telegram
+                    
+                    <a href="https://t.me/USERNAME_TELEGRAM" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 px-1 rounded-xl shadow-[0_0_15px_rgba(2,132,199,0.4)] transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center text-[11px] md:text-sm">
+                        <span class="text-lg md:text-xl mb-1">✈️</span>
+                        <span>Telegram</span>
                     </a>
-                    <!-- Bot Auto Order -->
-                    <a href="https://t.me/USERNAME_BOT_TELEGRAM" target="_blank" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                        ?? Bot Auto Order
+                    
+                    <a href="https://t.me/USERNAME_BOT_TELEGRAM" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-1 rounded-xl shadow-[0_0_15px_rgba(79,70,229,0.4)] transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center text-[11px] md:text-sm">
+                        <span class="text-lg md:text-xl mb-1">🤖</span>
+                        <span>Bot Order</span>
                     </a>
                 </div>
             </section>
 
         </main>
+
+        <footer class="mt-8 border-t border-slate-700 pt-6 pb-8 text-center text-gray-500 text-xs w-full max-w-4xl mx-auto px-6">
+            <p>© hannzstore</p>
+        </footer>
     </div>
 
-    <!-- Script Animasi Luar Angkasa -->
     <script>
-        const canvas = document.getElementById('space-canvas');
-        const ctx = canvas.getContext('2d');
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const stars = [];
-        const numStars = 120;
-
-        for (let i = 0; i < numStars; i++) {
-            stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random() * 1.5,
-                alpha: Math.random(),
-                speed: Math.random() * 0.3 + 0.05
-            });
-        }
-
+        // Background Luar Angkasa
+        const spaceCanvas = document.getElementById('space-canvas');
+        const spaceCtx = spaceCanvas.getContext('2d');
+        function resizeSpace() { spaceCanvas.width = window.innerWidth; spaceCanvas.height = window.innerHeight; }
+        resizeSpace(); window.addEventListener('resize', resizeSpace);
+        const stars = Array.from({length: 120}, () => ({ x: Math.random() * spaceCanvas.width, y: Math.random() * spaceCanvas.height, radius: Math.random() * 1.5, alpha: Math.random(), speed: Math.random() * 0.3 + 0.05 }));
+        
         function animateSpace() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#020617'; // Latar belakang utama
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            stars.forEach(star => {
-                star.y -= star.speed;
-                if (star.y < 0) {
-                    star.y = canvas.height;
-                    star.x = Math.random() * canvas.width;
-                }
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(186, 230, 253, ${star.alpha})`;
-                ctx.fill();
+            spaceCtx.fillStyle = '#020617'; spaceCtx.fillRect(0, 0, spaceCanvas.width, spaceCanvas.height);
+            stars.forEach(s => {
+                s.y -= s.speed; if (s.y < 0) { s.y = spaceCanvas.height; s.x = Math.random() * spaceCanvas.width; }
+                spaceCtx.beginPath(); spaceCtx.arc(s.x, s.y, s.radius, 0, Math.PI * 2); spaceCtx.fillStyle = `rgba(186, 230, 253, ${s.alpha})`; spaceCtx.fill();
             });
-
             requestAnimationFrame(animateSpace);
-        }
-        animateSpace();
+        } animateSpace();
 
-        // Script Fetch API Statistik
-        fetch('/api/statistik')
-            .then(response => response.json())
-            .then(data => {
-                // Mengisi angka ke dalam elemen id="angka-user"
-                document.getElementById('angka-user').innerText = data.total_user + "+";
-            })
-            .catch(error => console.error('Gagal mengambil data:', error));
+        // API User
+        fetch('/api/statistik').then(res => res.json()).then(data => {
+            document.getElementById('angka-user').innerText = data.total_user + "+";
+        }).catch(err => console.error(err));
     </script>
 </body>
 </html>
