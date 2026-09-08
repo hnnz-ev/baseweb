@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hannzstore - Premium Apps</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Canvas Background */
@@ -15,11 +16,14 @@
 </head>
 <body class="bg-slate-950 text-gray-200 font-sans min-h-screen relative overflow-x-hidden">
 
+    <!-- Efek Bekas Scroll -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1.5 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-500 z-[100] w-0 shadow-[0_0_10px_rgba(168,85,247,0.7)] rounded-r-full transition-all duration-150 ease-out"></div>
 
+    <!-- Animasi Luar Angkasa -->
     <canvas id="space-canvas"></canvas>
 
     <div class="relative z-10 flex flex-col min-h-screen">
+        <!-- Header -->
         <header class="bg-slate-900/80 backdrop-blur-md py-3 px-6 shadow-lg flex items-center justify-start gap-3 border-b border-slate-800 sticky top-0 z-50">
             <img src="logo1.png" alt="Logo Hannzstore" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow-sm object-cover">
             <div>
@@ -28,114 +32,161 @@
             </div>
         </header>
 
+        <!-- Konten Utama -->
         <main class="max-w-4xl mx-auto p-4 sm:p-6 space-y-10 flex-grow w-full">
 
+            <!-- Profil Store & Statistik Box -->
             <section class="bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-2xl p-6 md:p-8 text-center border-t-4 border-purple-500 border-x border-b border-slate-800">
                 <p class="text-base md:text-xl text-gray-200 font-medium mb-6 leading-relaxed">
-                    "Salah satu store dengan produk aplikasi premium yang terjamin keamanannya."
+                    “Salah satu store dengan produk aplikasi premium yang terjamin keamanannya.”
                 </p>
 
+                <!-- Badges -->
                 <div class="grid grid-cols-3 gap-2 w-full text-[10px] md:text-sm font-semibold text-gray-300">
                     <div class="bg-slate-800/80 px-1 py-2 md:py-3 rounded-xl border border-slate-700 hover:scale-105 transition-all cursor-default flex flex-col items-center justify-center">
-                        <span class="text-lg md:text-xl mb-1">✨</span>
+                        <span class="text-lg md:text-xl mb-1">&#x2728;</span>
                         <span class="leading-tight">Maker App</span>
                     </div>
                     
                     <div class="bg-slate-800/80 px-1 py-2 md:py-3 rounded-xl border border-slate-700 hover:scale-105 transition-all cursor-default flex flex-col items-center justify-center">
-                        <span class="text-lg md:text-xl mb-1">👥</span>
+                        <span class="text-lg md:text-xl mb-1">&#x1F465;</span>
                         <span class="leading-tight">User: <span class="text-purple-400 font-bold" id="angka-user">...</span></span>
                     </div>
                     
                     <div class="bg-slate-800/80 px-1 py-2 md:py-3 rounded-xl border border-slate-700 hover:scale-105 transition-all cursor-default flex flex-col items-center justify-center">
-                        <span class="text-lg md:text-xl mb-1">🤖</span>
+                        <span class="text-lg md:text-xl mb-1">&#x1F916;</span>
                         <span class="leading-tight">Bot 24/7</span>
                     </div>
                 </div>
             </section>
 
+            <!-- Produk Unggulan -->
             <section class="pt-2">
                 <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-white drop-shadow-md">Produk Unggulan</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex flex-col gap-3">
                     
-                    <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-slate-800 text-center hover:border-blue-500 transition-all hover:scale-105">
-                        <img src="logo2.jpeg" alt="Capcut Pro" class="w-20 h-20 mx-auto mb-4 rounded-2xl shadow-md object-cover">
-                        <h3 class="text-xl font-bold mb-2 text-blue-400">Capcut Pro</h3>
-                        <p class="text-gray-400 text-sm mb-4">Edit video tanpa batas dengan semua fitur premium terbuka.</p>
-                        
-                        <div class="border-t border-slate-700 pt-3 mt-2 flex justify-between items-center text-[11px] md:text-xs">
-                            <span class="text-gray-200 font-bold">Mulai Rp 1.500</span>
-                            <span class="text-emerald-400 font-semibold">🔥 Terjual: 150+</span>
+                    <!-- Capcut Pro -->
+                    <div class="bg-slate-900/80 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg border border-slate-800 flex items-center justify-between hover:border-blue-500 transition-all hover:scale-[1.01]">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <img src="logo2.jpeg" alt="Capcut Pro" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl shadow-md object-cover">
+                            <h3 class="text-base sm:text-lg font-bold text-blue-400">Capcut Pro</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-white font-bold text-xs sm:text-sm">Mulai Rp 5.000</p>
+                            <p class="text-emerald-400 text-[10px] sm:text-xs font-semibold mt-0.5">&#x1F525; Terjual: 229+</p>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-slate-800 text-center hover:border-purple-500 transition-all hover:scale-105">
-                        <img src="logo3.jpeg" alt="Alight Motion" class="w-20 h-20 mx-auto mb-4 rounded-2xl shadow-md object-cover">
-                        <h3 class="text-xl font-bold mb-2 text-purple-400">Alight Motion</h3>
-                        <p class="text-gray-400 text-sm mb-4">Bikin animasi dan motion graphics pro langsung dari HP-mu.</p>
-                        
-                        <div class="border-t border-slate-700 pt-3 mt-2 flex justify-between items-center text-[11px] md:text-xs">
-                            <span class="text-gray-200 font-bold">Mulai Rp 1.500</span>
-                            <span class="text-emerald-400 font-semibold">🔥 Terjual: 150+</span>
+                    <!-- Alight Motion -->
+                    <div class="bg-slate-900/80 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg border border-slate-800 flex items-center justify-between hover:border-purple-500 transition-all hover:scale-[1.01]">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <img src="logo3.jpeg" alt="Alight Motion" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl shadow-md object-cover">
+                            <h3 class="text-base sm:text-lg font-bold text-purple-400">Alight Motion</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-white font-bold text-xs sm:text-sm">Mulai Rp 3.000</p>
+                            <p class="text-emerald-400 text-[10px] sm:text-xs font-semibold mt-0.5">&#x1F525; Terjual: 74+</p>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-lg border border-slate-800 text-center hover:border-blue-500 transition-all hover:scale-105">
-                        <img src="logo4.jpeg" alt="Wink Premium" class="w-20 h-20 mx-auto mb-4 rounded-2xl shadow-md object-cover">
-                        <h3 class="text-xl font-bold mb-2 text-blue-400">Wink Premium</h3>
-                        <p class="text-gray-400 text-sm mb-4">Enhance video dan foto dengan AI kualitas HD super jernih.</p>
-                        
-                        <div class="border-t border-slate-700 pt-3 mt-2 flex justify-between items-center text-[11px] md:text-xs">
-                            <span class="text-gray-200 font-bold">Mulai Rp 1.500</span>
-                            <span class="text-emerald-400 font-semibold">🔥 Terjual: 150+</span>
+                    <!-- Wink Premium -->
+                    <div class="bg-slate-900/80 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg border border-slate-800 flex items-center justify-between hover:border-blue-500 transition-all hover:scale-[1.01]">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <img src="logo4.jpeg" alt="Wink Premium" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl shadow-md object-cover">
+                            <h3 class="text-base sm:text-lg font-bold text-blue-400">Wink Premium</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-white font-bold text-xs sm:text-sm">Mulai Rp 2.000</p>
+                            <p class="text-emerald-400 text-[10px] sm:text-xs font-semibold mt-0.5">&#x1F525; Terjual: 55+</p>
                         </div>
                     </div>
 
                 </div>
             </section>
 
+            <!-- Layanan Kami -->
             <section class="pt-2">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-white drop-shadow-md">Apa Kata Mereka?</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border-l-4 border-blue-500 border-y border-r border-slate-800">
-                        <p class="italic text-gray-300 mb-4 text-sm">"produk disini harganya cocok di kantong, apalagi di kalangan pelajar kayak aku.adminnyajuga ramah,ada kendala apapun pasti direspon.the best memang"</p>
-                        <h4 class="font-bold text-blue-400">- Y***a</h4>
-                    </div>
-                    <div class="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl shadow-xl border-l-4 border-purple-500 border-y border-r border-slate-800">
-                        <p class="italic text-gray-300 mb-4 text-sm">"produk disini lumayan banyak, ada kendala bisa konsultasi anti ribet!. Next bakal langganan di sini terus."</p>
-                        <h4 class="font-bold text-purple-400">- A**o</h4>
-                    </div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-white drop-shadow-md">Layanan Kami</h2>
+                <div class="flex flex-col gap-3">
+                    
+                    <!-- Temp Email -->
+                    <a href="https://temp-mail.org" target="_blank" class="bg-slate-900/80 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg border border-slate-800 flex items-center justify-between hover:border-purple-500 transition-all hover:scale-[1.01]">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-slate-800 rounded-xl border border-slate-700 shadow-md text-2xl">&#x2709;&#xFE0F;</div>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-200">Temporary Email</h3>
+                        </div>
+                        <div class="text-right text-gray-400 text-xs sm:text-sm font-semibold pr-2">
+                            Buka &rarr;
+                        </div>
+                    </a>
+
+                    <!-- Web AM Premium Gratis -->
+                    <a href="#" target="_blank" class="bg-slate-900/80 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg border border-slate-800 flex items-center justify-between hover:border-blue-500 transition-all hover:scale-[1.01]">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-slate-800 rounded-xl border border-slate-700 shadow-md text-2xl">&#x1F3AD;</div>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-200">Web AM Gratis</h3>
+                        </div>
+                        <div class="text-right text-gray-400 text-xs sm:text-sm font-semibold pr-2">
+                            Buka &rarr;
+                        </div>
+                    </a>
+
+                    <!-- Bot Order 24jam -->
+                    <a href="https://t.me/USERNAME_BOT_TELEGRAM" target="_blank" class="bg-slate-900/80 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg border border-slate-800 flex items-center justify-between hover:border-indigo-500 transition-all hover:scale-[1.01]">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-slate-800 rounded-xl border border-slate-700 shadow-md text-2xl">&#x1F916;</div>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-200">Bot Order 24 Jam</h3>
+                        </div>
+                        <div class="text-right text-gray-400 text-xs sm:text-sm font-semibold pr-2">
+                            Buka &rarr;
+                        </div>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-slate-900/80 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg border border-slate-800 flex items-center justify-between hover:border-emerald-500 transition-all hover:scale-[1.01]">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-slate-800 rounded-xl border border-slate-700 shadow-md text-2xl">&#x1F4F1;</div>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-200">Kontak WhatsApp</h3>
+                        </div>
+                        <div class="text-right text-gray-400 text-xs sm:text-sm font-semibold pr-2">
+                            Buka &rarr;
+                        </div>
+                    </a>
+
                 </div>
             </section>
 
+            <!-- Media Sosial Kami -->
             <section class="pt-6 text-center">
-                <h2 class="text-2xl md:text-3xl font-bold mb-2 text-white drop-shadow-md">Kontak Kami</h2>
-                <p class="text-gray-400 text-sm mb-6">Pilih salah satu layanan di bawah ini</p>
-                
-                <div class="grid grid-cols-3 gap-2 w-full max-w-lg mx-auto">
-                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-1 rounded-xl shadow-[0_0_15px_rgba(5,150,105,0.4)] transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center text-[11px] md:text-sm">
-                        <span class="text-lg md:text-xl mb-1">📱</span>
-                        <span>WhatsApp</span>
-                    </a>
+                <h2 class="text-xl md:text-2xl font-bold mb-5 text-center text-white drop-shadow-md">Media Sosial Kami</h2>
+                <div class="flex justify-center items-center gap-4">
                     
-                    <a href="https://t.me/USERNAME_TELEGRAM" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 px-1 rounded-xl shadow-[0_0_15px_rgba(2,132,199,0.4)] transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center text-[11px] md:text-sm">
-                        <span class="text-lg md:text-xl mb-1">✈️</span>
-                        <span>Telegram</span>
+                    <!-- Instagram Logo -->
+                    <a href="https://instagram.com/USERNAME_IG" target="_blank" aria-label="Instagram" class="bg-slate-900/80 backdrop-blur-md p-3 rounded-xl border border-slate-800 hover:border-pink-500 transition-all hover:scale-110 shadow-lg flex items-center justify-center text-pink-500">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
                     </a>
-                    
-                    <a href="https://t.me/USERNAME_BOT_TELEGRAM" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-1 rounded-xl shadow-[0_0_15px_rgba(79,70,229,0.4)] transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center text-[11px] md:text-sm">
-                        <span class="text-lg md:text-xl mb-1">🤖</span>
-                        <span>Bot Order</span>
+
+                    <!-- TikTok Logo -->
+                    <a href="https://tiktok.com/@USERNAME_TIKTOK" target="_blank" aria-label="TikTok" class="bg-slate-900/80 backdrop-blur-md p-3 rounded-xl border border-slate-800 hover:border-cyan-400 transition-all hover:scale-110 shadow-lg flex items-center justify-center text-cyan-400">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.98-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.31 1.56-1.28 2.55.02.99.55 1.93 1.39 2.44 1.05.65 2.44.62 3.45-.07.82-.55 1.29-1.52 1.28-2.51.01-5.46.01-10.92.01-16.38z"/>
+                        </svg>
                     </a>
+
                 </div>
             </section>
 
         </main>
 
+        <!-- Footer / Copyright Line -->
         <footer class="mt-8 border-t border-slate-700 pt-6 pb-8 text-center text-gray-500 text-xs w-full max-w-4xl mx-auto px-6">
-            <p>© hannzstore</p>
+            <p>&copy; hannzstore</p>
         </footer>
     </div>
 
+    <!-- Script JavaScript Animasi & API -->
     <script>
         // Progress Bar
         window.addEventListener('scroll', () => {
@@ -154,6 +205,7 @@
         
         function animateSpace() {
             spaceCtx.fillStyle = '#020617'; spaceCtx.fillRect(0, 0, spaceCanvas.width, spaceCanvas.height);
+            stars.exports = true; // dummy line prevention
             stars.forEach(s => {
                 s.y -= s.speed; if (s.y < 0) { s.y = spaceCanvas.height; s.x = Math.random() * spaceCanvas.width; }
                 spaceCtx.beginPath(); spaceCtx.arc(s.x, s.y, s.radius, 0, Math.PI * 2); spaceCtx.fillStyle = `rgba(186, 230, 253, ${s.alpha})`; spaceCtx.fill();
